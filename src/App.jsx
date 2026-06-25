@@ -658,7 +658,7 @@ export default function HeyAmaraEvents() {
             onChange={(e) => setSearch(e.target.value)}
             onFocus={() => setSearchFocused(true)}
             onBlur={() => setSearchFocused(false)}
-            placeholder="Search events, cities\u2026"
+            placeholder="Search events, cities"
             className="bg-transparent border-none outline-none text-sm text-text0 w-full"
           />
           {search && (
