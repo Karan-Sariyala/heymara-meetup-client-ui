@@ -640,9 +640,7 @@ export default function HeyAmaraEvents() {
       {/* Nav */}
       <nav className="shrink-0 z-50 bg-bg0/93 backdrop-blur-lg border-b border-border h-[54px] px-6 flex items-center justify-between">
         <div className="flex items-center gap-[9px]">
-          <div className="w-[30px] h-[30px] rounded-[9px] bg-gradient-to-br from-[#38BDF8] to-[#F472B6] flex items-center justify-center font-extrabold text-[15px] text-[#07070A]">
-            A
-          </div>
+          <img src="/logo.webp" alt="HeyAmara" className="w-[30px] h-[30px] object-contain" />
           <span className="font-bold text-[15px] tracking-[-0.025em]">HeyAmara</span>
           <span className="ml-1 px-2 py-0.5 rounded-[5px] text-[10px] font-bold text-[#38BDF8] bg-[#38BDF8]/10 border border-[#38BDF8]/20 tracking-[0.06em]">
             BETA
