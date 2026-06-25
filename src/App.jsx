@@ -702,31 +702,29 @@ export default function HeyAmaraEvents() {
           </div>
         </div>
 
-        {/* Calendar Filter + Category Pills */}
-        <div className="shrink-0 px-6 pb-6 flex items-start gap-3">
+        {/* Calendar Filter + Segmented Control */}
+        <div className="shrink-0 px-6 pb-6 flex items-center gap-3">
           <CalendarFilter value={activeDate} onChange={setActiveDate} />
-          <div className="flex gap-1.5 flex-wrap flex-1">
-            {["All", ...Object.keys(CATS)].map((cat) => {
-              const cfg = CATS[cat];
-              const isA = cat === activeCat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCat(cat)}
-                  className="shrink-0 px-3.5 py-1.5 rounded-full text-xs font-medium cursor-pointer transition-colors"
-                  style={{
-                    background: isA ? `${cfg?.hex || "#F0EDF8"}1E` : "#0F0F14",
-                    border: `1px solid ${isA ? `${cfg?.hex || "#F0EDF8"}55` : "#1E1E2C"}`,
-                    color: isA ? cfg?.hex || "#F0EDF8" : "#8A87A0",
-                  }}
-                >
-                  {cfg && (
-                    <span className="inline-block w-1.5 h-1.5 rounded-full mr-1.5 align-middle" style={{ background: cfg.hex }} />
-                  )}
-                  {cat === "All" ? "\u2726 All events" : cat}
-                </button>
-              );
-            })}
+          <div className="rounded-xl border border-border bg-bg2 overflow-x-auto">
+            <div className="flex">
+              {["All", ...Object.keys(CATS)].map((cat) => {
+                const cfg = CATS[cat];
+                const isA = cat === activeCat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setActiveCat(cat)}
+                    className="shrink-0 px-3 py-2 text-xs font-medium cursor-pointer whitespace-nowrap transition-colors border-r border-border last:border-r-0"
+                    style={{
+                      background: isA ? `${cfg?.hex || "#F0EDF8"}22` : "transparent",
+                      color: isA ? cfg?.hex || "#F0EDF8" : "#8A87A0",
+                    }}
+                  >
+                    {cfg ? `${cfg.emoji} ${cat}` : "\u2726 All"}
+                  </button>
+                );
+              })}
+            </div>
           </div>
         </div>
 
